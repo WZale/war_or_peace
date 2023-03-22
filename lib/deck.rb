@@ -13,7 +13,8 @@ def high_ranking_cards
 end
 
 def percent_high_ranking
-
+  high_rank_array = cards.select { |card| card.rank > 11 }  
+  (high_rank_array.length.to_f / cards.length.to_f) * 100
 end
 
 def remove_card
