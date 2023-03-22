@@ -4,24 +4,23 @@ class Deck
     @cards = cards
   end
 
-def rank_of_card_at(number)
-  cards[number].rank
-end
+  def rank_of_card_at(number)
+    cards[number].rank
+  end
 
-def high_ranking_cards
-  high_rank_array = cards.select { |card| card.rank > 11 }
-end
+  def high_ranking_cards
+    cards.select { |card| card.rank > 10 }
+  end
 
-def percent_high_ranking
-  high_rank_array = cards.select { |card| card.rank > 11 }  
-  (high_rank_array.length.to_f / cards.length.to_f) * 100
-end
+  def percent_high_ranking
+    ((high_ranking_cards.length.to_f / cards.length) * 100).round(2)
+  end
 
-def remove_card
+  def remove_card
+    cards.pop
+  end
 
-end
+  def add_card
 
-def add_card
-
-end
+  end
 end
