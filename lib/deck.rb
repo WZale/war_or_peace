@@ -9,9 +9,7 @@ def rank_of_card_at(number)
 end
 
 def high_ranking_cards
-  if card.rank > 10
-    card
-  end
+  high_rank_array = cards.select { |card| card.rank > 11 }
 end
 
 def percent_high_ranking

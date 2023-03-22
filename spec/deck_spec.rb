@@ -16,7 +16,7 @@ RSpec.describe Deck do
   
   end
 
-  it "has readable attributes" do
+  it "has a rank_of_card_at method" do
     card1 = Card.new(:diamond, 'Queen', 12)
     card2 = Card.new(:spade, '3', 3) 
     card3 = Card.new(:heart, 'Ace', 14)
@@ -27,6 +27,19 @@ RSpec.describe Deck do
 
     expect(deck.rank_of_card_at(0)).to eq(12)
     expect(deck.rank_of_card_at(2)).to eq(14)
-    require 'pry'; binding.pry
   end
+
+  it "has a high_ranking_cards method" do
+    card1 = Card.new(:diamond, 'Queen', 12)
+    card2 = Card.new(:spade, '3', 3) 
+    card3 = Card.new(:heart, 'Ace', 14)
+
+    cards = [card1, card2, card3]
+
+    deck = Deck.new(cards)
+
+    expect(deck.high_ranking_cards).to eq([card1, card3])
+    
+  end
+
 end
