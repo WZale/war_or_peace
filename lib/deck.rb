@@ -20,7 +20,7 @@ class Deck
     cards.pop
   end
 
-  def add_card
-
+  def add_card(card)
+    cards << card
   end
 end

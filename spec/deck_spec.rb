@@ -54,7 +54,7 @@ RSpec.describe Deck do
     expect(deck.percent_high_ranking).to eq(66.67)
   end
 
-  it "has a remove card method" do
+  it "has a remove_card method" do
     card1 = Card.new(:diamond, 'Queen', 12)
     card2 = Card.new(:spade, '3', 3) 
     card3 = Card.new(:heart, 'Ace', 14)
@@ -88,8 +88,11 @@ RSpec.describe Deck do
     card4 = Card.new(:club, '5', 5)    
 
     deck.add_card(card4)
-
     
-  end
+    expect(deck.cards).to eq([card1, card2, card4])
 
+    expect(deck.high_ranking_cards).to eq([card1])
+
+    expect(deck.percent_high_ranking).to eq(33.33)
+  end
 end
