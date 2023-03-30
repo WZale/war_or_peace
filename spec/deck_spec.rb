@@ -11,6 +11,8 @@ RSpec.describe Deck do
     cards = [card1, card2, card3]
 
     deck = Deck.new(cards)
+    
+    expect(deck.cards).to eq([card1, card2, card3])
   
     expect(deck).to be_an_instance_of(Deck)
   
@@ -49,7 +51,6 @@ RSpec.describe Deck do
     cards = [card1, card2, card3]
 
     deck = Deck.new(cards)
-
 
     expect(deck.percent_high_ranking).to eq(66.67)
   end
